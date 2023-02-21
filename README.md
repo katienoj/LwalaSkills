@@ -98,20 +98,20 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+The following ar required to run this application
+* Server version: 8.0.32-0ubuntu0.20.04.2 - (Ubuntu)
+* Apache/2.4.41 or Nginx
+* MySQL Database (or MariaDB)
+* Linux OS (Ubuntu Server)
+* PHP version: 7.4.3
+
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+Follow the below Instructions to get the system up and running
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/katienoj/LwalaSkills.git
    ```
 3. Install NPM packages
    ```sh
