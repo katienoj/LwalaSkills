@@ -1,0 +1,210 @@
+#dashboardmenu {
+
+width: 100%;
+
+float: left;
+
+background:#1a1b63;
+
+}
+
+#dashboardmenu ul {
+
+list-style:none;
+
+margin: 0;
+
+padding: 0;
+
+width: 100%;
+
+float: left;
+
+margin: 0px;
+
+padding: 0px;
+
+list-style-type: none;
+
+font-size:12px;
+
+font-weight:bold;
+
+}
+
+#dashboardmenu a, #dashboardmenu h2 {
+
+font: bold 11px/16px arial, helvetica, sans-serif;
+
+display: block;
+
+border-width: 2px;
+
+border-style: solid;
+
+border-color: #ccc #888 #555 #bbb;
+
+margin: 0;
+
+padding: 2px 3px;
+
+color: #ffffff;
+
+background-color: #003366;
+
+padding: 3px;
+
+border: 1px #ffffff outset;
+
+}
+
+
+
+#dashboardmenu h2 {
+
+color: #fff;
+
+background: #000;
+
+text-transform: uppercase;
+
+}
+
+
+
+#dashboardmenu a {
+
+color: #000;
+
+background:#A8FFA8;
+
+text-decoration: none;
+
+font-size:14px;
+
+font-weight:bolder;
+
+}
+
+
+
+#dashboardmenu ul ul a {
+
+color:#009900;
+
+background:#ECFFF5;
+
+text-decoration: none;
+
+font-size:12px;
+
+font-weight:bold;
+
+border-left:solid 2px #00BB00;
+
+width:100%;
+
+}
+
+#dashboardmenu ul ul ul a {
+
+color:#009900;
+
+background:#88FFA6;
+
+text-decoration: none;
+
+font-size:12px;
+
+font-weight:bold;
+
+border-left:solid 2px #00BB00;
+
+}
+
+#dashboardmenu ul ul a:hover {
+
+color:#009900;
+
+background:#88FFA6;
+
+text-decoration: none;
+
+font-size:12px;
+
+font-weight:bold;
+
+border-left:solid 2px #00BB00;
+
+}
+
+
+
+#dashboardmenu a:hover {
+
+color: #a00;
+
+background: #fff;
+
+}
+
+
+
+#dashboardmenu li {position: relative;}
+
+
+
+#dashboardmenu ul ul {
+
+position: absolute;
+
+z-index: 500;
+
+font-size:11px;
+
+
+
+}
+
+
+
+#dashboardmenu ul ul ul {
+
+top: 0;
+
+left: 100%;
+
+}
+
+div#dashboardmenu ul{display:inline;}
+
+div#dashboardmenu ul ul,
+
+div#dashboardmenu ul li:hover ul ul,
+
+div#dashboardmenu ul ul li:hover ul ul
+
+{display: none;}
+
+
+
+div#dashboardmenu ul li:hover ul,
+
+div#dashboardmenu ul ul li:hover ul,
+
+div#dashboardmenu ul ul ul li:hover ul
+
+{display: block;}
+
+
+
+
+
+
+
+
+
+
+
+
+

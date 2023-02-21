@@ -1,0 +1,52 @@
+/* CSS Document */
+#main_window
+{
+display:block;
+z-index:10;
+width:100%;
+height:760px;
+border:solid 1px #666666;
+}
+#topmenu
+{
+display:block;
+z-index:1000;
+width:100%;
+}
+#links_div
+{
+display:block;
+z-index:1000;
+width:100%;
+height:70px;
+border:solid 1px #666666;
+}
+#quick_links
+{
+display:block;
+z-index:10;
+width:100%;
+height:500px;
+border:solid 1px #666666;
+}
+#search_bar
+{
+display:block;
+z-index:10;
+width:100%;
+border:solid 1px #666666;
+}
+#bottom_div
+{
+display:block;
+z-index:10;
+width:100%;
+height:20px;
+border:solid 1px #666666;
+background-color:#004F27;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+font-weight:bold;
+border:solid 1px #666666;
+
+}

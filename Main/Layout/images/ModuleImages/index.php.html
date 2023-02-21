@@ -1,0 +1,3043 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<head>Lwala
+
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+	<title>Africare HMIS</title>
+
+	<link rel="stylesheet" href="index.php_files/divs.css">
+
+	<link rel="stylesheet" href="index.php_files/topmenu.css">
+
+	<link rel="stylesheet" href="index.php_files/interface.css">
+
+	<script language="javascript" type="text/javascript" src="index.php_files/general.js"></script>
+
+	<script language="javascript" type="text/javascript" src="index.php_files/MainValidation.js"></script>
+
+	<script language="javascript" type="text/javascript" src="index.php_files/move_divs.js"></script>
+
+	<script language="javascript" type="text/javascript" src="index.php_files/scw.js"></script>
+
+	<style type="text/css">
+
+		.scw {
+
+			padding: 1px;
+
+			vertical-align: middle;
+
+		}
+
+
+
+		iframe.scw {
+
+			position: absolute;
+
+			z-index: 1;
+
+			top: 0px;
+
+			left: 0px;
+
+			visibility: hidden;
+
+			width: 1px;
+
+			height: 1px;
+
+		}
+
+
+
+		table.scw {
+
+			padding: 0px;
+
+			visibility: hidden;
+
+			position: absolute;
+
+			cursor: default;
+
+			width: 200px;
+
+			top: 0px;
+
+			left: 0px;
+
+			z-index: 10001;
+
+			text-align: center;
+
+		}
+
+	</style>
+
+	<style type="text/css">
+
+		/* IMPORTANT:  The SCW calendar script requires all                the classes defined here.*/
+
+		table.scw {
+
+			padding: 1px;
+
+			vertical-align: middle;
+
+			border: ridge 2px;
+
+			font-size: 10pt;
+
+			font-family: Verdana, Arial, Helvetica, Sans-Serif;
+
+			font-weight: bold;
+
+		}
+
+
+
+		td.scwDrag,
+
+		td.scwHead {
+
+			padding: 0px 0px;
+
+			text-align: center;
+
+		}
+
+
+
+		td.scwDrag {
+
+			font-size: 8pt;
+
+		}
+
+
+
+		select.scwHead {
+
+			margin: 3px 1px;
+
+			text-align: center;
+
+		}
+
+
+
+		input.scwHead {
+
+			height: 22px;
+
+			width: 22px;
+
+			vertical-align: middle;
+
+			text-align: center;
+
+			margin: 2px 1px;
+
+			font-weight: bold;
+
+			font-size: 10pt;
+
+			font-family: fixedSys;
+
+		}
+
+
+
+		td.scwWeekNumberHead,
+
+		td.scwWeek {
+
+			padding: 0px;
+
+			text-align: center;
+
+			font-weight: bold;
+
+		}
+
+
+
+		td.scwNow,
+
+		td.scwNowHover,
+
+		td.scwNow:hover,
+
+		td.scwNowDisabled {
+
+			padding: 0px;
+
+			text-align: center;
+
+			vertical-align: middle;
+
+			font-weight: normal;
+
+		}
+
+
+
+		table.scwCells {
+
+			text-align: right;
+
+			font-size: 8pt;
+
+			width: 96%;
+
+		}
+
+
+
+		td.scwCells,
+
+		td.scwCellsHover,
+
+		td.scwCells:hover,
+
+		td.scwCellsDisabled,
+
+		td.scwCellsExMonth,
+
+		td.scwCellsExMonthHover,
+
+		td.scwCellsExMonth:hover,
+
+		td.scwCellsExMonthDisabled,
+
+		td.scwCellsWeekend,
+
+		td.scwCellsWeekendHover,
+
+		td.scwCellsWeekend:hover,
+
+		td.scwCellsWeekendDisabled,
+
+		td.scwInputDate,
+
+		td.scwInputDateHover,
+
+		td.scwInputDate:hover,
+
+		td.scwInputDateDisabled,
+
+		td.scwWeekNo,
+
+		td.scwWeeks {
+
+			padding: 3px;
+
+			width: 16px;
+
+			height: 16px;
+
+			border-width: 1px;
+
+			border-style: solid;
+
+			font-weight: bold;
+
+			vertical-align: middle;
+
+		}
+
+
+
+		/* Blend the colours into your page here...    */
+
+		/* Calendar background */
+
+		table.scw {
+
+			background-color: #EFEFEF;
+
+		}
+
+
+
+		/* Drag Handle */
+
+		td.scwDrag {
+
+			background-color: #EFEFEF;
+
+			color: #CCCCFF;
+
+		}
+
+
+
+		/* Week number heading */
+
+		td.scwWeekNumberHead {
+
+			color: #6666CC;
+
+		}
+
+
+
+		/* Week day headings */
+
+		td.scwWeek {
+
+			color: #CCCCCC;
+
+		}
+
+
+
+		/* Week numbers */
+
+		td.scwWeekNo {
+
+			background-color: #776677;
+
+			color: #CCCCCC;
+
+		}
+
+
+
+		/* Enabled Days */
+
+		/* Week Day */
+
+		td.scwCells {
+
+			background-color: #CCCCCC;
+
+			color: #000000;
+
+		}
+
+
+
+		/* Day matching the input date */
+
+		td.scwInputDate {
+
+			background-color: #CC9999;
+
+			color: #FF0000;
+
+		}
+
+
+
+		/* Weekend Day */
+
+		td.scwCellsWeekend {
+
+			background-color: #CCCCCC;
+
+			color: #CC6666;
+
+		}
+
+
+
+		/* Day outside the current month */
+
+		td.scwCellsExMonth {
+
+			background-color: #CCCCCC;
+
+			color: #666666;
+
+		}
+
+
+
+		/* Today selector */
+
+		td.scwNow {
+
+			background-color: #6666CC;
+
+			color: #FFFFFF;
+
+		}
+
+
+
+		/* Clear Button */
+
+		td.scwClear {
+
+			padding: 0px;
+
+		}
+
+
+
+		input.scwClear {
+
+			padding: 0px;
+
+			text-align: center;
+
+			font-size: 8pt;
+
+		}
+
+
+
+		/* MouseOver/Hover formatting        If you want to "turn off" any of the formatting        then just set to the same as the standard format       above.        Note: The reason that the following are       implemented using both a class and a :hover       pseudoclass is because Opera handles the rendering       involved in the class swap very poorly and IE6        (and below) only implements pseudoclasses on the       anchor tag.*/
+
+		/* Active cells */
+
+		td.scwCells:hover,
+
+		td.scwCellsHover {
+
+			background-color: #FFFF00;
+
+			cursor: pointer;
+
+			color: #000000;
+
+		}
+
+
+
+		/* Day matching the input date */
+
+		td.scwInputDate:hover,
+
+		td.scwInputDateHover {
+
+			background-color: #FFFF00;
+
+			cursor: pointer;
+
+			color: #000000;
+
+		}
+
+
+
+		/* Weekend cells */
+
+		td.scwCellsWeekend:hover,
+
+		td.scwCellsWeekendHover {
+
+			background-color: #FFFF00;
+
+			cursor: pointer;
+
+			color: #000000;
+
+		}
+
+
+
+		/* Day outside the current month */
+
+		td.scwCellsExMonth:hover,
+
+		td.scwCellsExMonthHover {
+
+			background-color: #FFFF00;
+
+			cursor: pointer;
+
+			color: #000000;
+
+		}
+
+
+
+		/* Today selector */
+
+		td.scwNow:hover,
+
+		td.scwNowHover {
+
+			color: #FFFF00;
+
+			cursor: pointer;
+
+			font-weight: bold;
+
+		}
+
+
+
+		/* Disabled cells */
+
+		/* Week Day */
+
+		/* Day matching the input date */
+
+		td.scwInputDateDisabled {
+
+			background-color: #999999;
+
+			color: #000000;
+
+		}
+
+
+
+		td.scwCellsDisabled {
+
+			background-color: #999999;
+
+			color: #000000;
+
+		}
+
+
+
+		/* Weekend Day */
+
+		td.scwCellsWeekendDisabled {
+
+			background-color: #999999;
+
+			color: #CC6666;
+
+		}
+
+
+
+		/* Day outside the current month */
+
+		td.scwCellsExMonthDisabled {
+
+			background-color: #999999;
+
+			color: #666666;
+
+		}
+
+
+
+		td.scwNowDisabled {
+
+			background-color: #6666CC;
+
+			color: #FFFFFF;
+
+		}
+
+	</style>
+
+	<!--[if IE]><div id='scwIE'></div><![endif]-->
+
+	<!--[if lt IE 7]><div id='scwIElt7'></div><![endif]-->
+
+</head>
+
+
+
+<body onclick="javascript:dropLoadedObject(event);" onmousemove="javascript:checkLoadedObjects(event);"
+
+	onload="StartModule('50');"><iframe
+
+		style="visibility: hidden; top: 295px; left: 458px; width: 196px; height: 254px;" class="scw" id="scwIframe"
+
+		name="scwIframe" frameborder="0"></iframe>
+
+	<table style="visibility: hidden; top: 295px; left: 458px;" id="scw" class="scw">
+
+		<tbody>
+
+			<tr class="scw">
+
+				<td class="scw">
+
+					<table class="scwHead" id="scwHead" cellpadding="0" cellspacing="0" width="100%">
+
+						<tbody>
+
+							<tr id="scwDrag" style="display: none;">
+
+								<td colspan="4" class="scwDrag" onmousedown="scwBeginDrag(event);"><span
+
+										id="scwDragText">click here to drag</span></td>
+
+							</tr>
+
+							<tr class="scwHead">
+
+								<td class="scwHead"><input class="scwHead" id="scwHeadLeft" value="&lt;"
+
+										onclick="scwShowMonth(-1);" type="button"></td>
+
+								<td class="scwHead"><select id="scwMonths" class="scwHead" onchange="scwShowMonth(0);">
+
+										<option value="Jan">Jan</option>
+
+										<option value="Feb">Feb</option>
+
+										<option value="Mar">Mar</option>
+
+										<option value="Apr">Apr</option>
+
+										<option value="May">May</option>
+
+										<option value="Jun">Jun</option>
+
+										<option value="Jul">Jul</option>
+
+										<option value="Aug">Aug</option>
+
+										<option value="Sep">Sep</option>
+
+										<option value="Oct">Oct</option>
+
+										<option value="Nov">Nov</option>
+
+										<option value="Dec">Dec</option>
+
+									</select></td>
+
+								<td class="scwHead"><select id="scwYears" class="scwHead" onchange="scwShowMonth(0);">
+
+										<option value="1900">1900</option>
+
+										<option value="1901">1901</option>
+
+										<option value="1902">1902</option>
+
+										<option value="1903">1903</option>
+
+										<option value="1904">1904</option>
+
+										<option value="1905">1905</option>
+
+										<option value="1906">1906</option>
+
+										<option value="1907">1907</option>
+
+										<option value="1908">1908</option>
+
+										<option value="1909">1909</option>
+
+										<option value="1910">1910</option>
+
+										<option value="1911">1911</option>
+
+										<option value="1912">1912</option>
+
+										<option value="1913">1913</option>
+
+										<option value="1914">1914</option>
+
+										<option value="1915">1915</option>
+
+										<option value="1916">1916</option>
+
+										<option value="1917">1917</option>
+
+										<option value="1918">1918</option>
+
+										<option value="1919">1919</option>
+
+										<option value="1920">1920</option>
+
+										<option value="1921">1921</option>
+
+										<option value="1922">1922</option>
+
+										<option value="1923">1923</option>
+
+										<option value="1924">1924</option>
+
+										<option value="1925">1925</option>
+
+										<option value="1926">1926</option>
+
+										<option value="1927">1927</option>
+
+										<option value="1928">1928</option>
+
+										<option value="1929">1929</option>
+
+										<option value="1930">1930</option>
+
+										<option value="1931">1931</option>
+
+										<option value="1932">1932</option>
+
+										<option value="1933">1933</option>
+
+										<option value="1934">1934</option>
+
+										<option value="1935">1935</option>
+
+										<option value="1936">1936</option>
+
+										<option value="1937">1937</option>
+
+										<option value="1938">1938</option>
+
+										<option value="1939">1939</option>
+
+										<option value="1940">1940</option>
+
+										<option value="1941">1941</option>
+
+										<option value="1942">1942</option>
+
+										<option value="1943">1943</option>
+
+										<option value="1944">1944</option>
+
+										<option value="1945">1945</option>
+
+										<option value="1946">1946</option>
+
+										<option value="1947">1947</option>
+
+										<option value="1948">1948</option>
+
+										<option value="1949">1949</option>
+
+										<option value="1950">1950</option>
+
+										<option value="1951">1951</option>
+
+										<option value="1952">1952</option>
+
+										<option value="1953">1953</option>
+
+										<option value="1954">1954</option>
+
+										<option value="1955">1955</option>
+
+										<option value="1956">1956</option>
+
+										<option value="1957">1957</option>
+
+										<option value="1958">1958</option>
+
+										<option value="1959">1959</option>
+
+										<option value="1960">1960</option>
+
+										<option value="1961">1961</option>
+
+										<option value="1962">1962</option>
+
+										<option value="1963">1963</option>
+
+										<option value="1964">1964</option>
+
+										<option value="1965">1965</option>
+
+										<option value="1966">1966</option>
+
+										<option value="1967">1967</option>
+
+										<option value="1968">1968</option>
+
+										<option value="1969">1969</option>
+
+										<option value="1970">1970</option>
+
+										<option value="1971">1971</option>
+
+										<option value="1972">1972</option>
+
+										<option value="1973">1973</option>
+
+										<option value="1974">1974</option>
+
+										<option value="1975">1975</option>
+
+										<option value="1976">1976</option>
+
+										<option value="1977">1977</option>
+
+										<option value="1978">1978</option>
+
+										<option value="1979">1979</option>
+
+										<option value="1980">1980</option>
+
+										<option value="1981">1981</option>
+
+										<option value="1982">1982</option>
+
+										<option value="1983">1983</option>
+
+										<option value="1984">1984</option>
+
+										<option value="1985">1985</option>
+
+										<option value="1986">1986</option>
+
+										<option value="1987">1987</option>
+
+										<option value="1988">1988</option>
+
+										<option value="1989">1989</option>
+
+										<option value="1990">1990</option>
+
+										<option value="1991">1991</option>
+
+										<option value="1992">1992</option>
+
+										<option value="1993">1993</option>
+
+										<option value="1994">1994</option>
+
+										<option value="1995">1995</option>
+
+										<option value="1996">1996</option>
+
+										<option value="1997">1997</option>
+
+										<option value="1998">1998</option>
+
+										<option value="1999">1999</option>
+
+										<option value="2000">2000</option>
+
+										<option value="2001">2001</option>
+
+										<option value="2002">2002</option>
+
+										<option value="2003">2003</option>
+
+										<option value="2004">2004</option>
+
+										<option value="2005">2005</option>
+
+										<option value="2006">2006</option>
+
+										<option value="2007">2007</option>
+
+										<option value="2008">2008</option>
+
+										<option value="2009">2009</option>
+
+										<option value="2010">2010</option>
+
+										<option value="2011">2011</option>
+
+										<option value="2012">2012</option>
+
+										<option value="2013">2013</option>
+
+										<option value="2014">2014</option>
+
+										<option value="2015">2015</option>
+
+										<option value="2016">2016</option>
+
+										<option value="2017">2017</option>
+
+										<option value="2018">2018</option>
+
+										<option value="2019">2019</option>
+
+									</select></td>
+
+								<td class="scwHead"><input class="scwHead" id="scwHeadRight" value="&gt;"
+
+										onclick="scwShowMonth(1);" type="button"></td>
+
+							</tr>
+
+						</tbody>
+
+					</table>
+
+				</td>
+
+			</tr>
+
+			<tr class="scw">
+
+				<td class="scw">
+
+					<table class="scwCells" align="center">
+
+						<thead>
+
+							<tr>
+
+								<td style="display: none;" class="scwWeekNumberHead" id="scwWeek_"></td>
+
+								<td class="scwWeek" id="scwWeekInit0">M</td>
+
+								<td class="scwWeek" id="scwWeekInit1">T</td>
+
+								<td class="scwWeek" id="scwWeekInit2">W</td>
+
+								<td class="scwWeek" id="scwWeekInit3">T</td>
+
+								<td class="scwWeek" id="scwWeekInit4">F</td>
+
+								<td class="scwWeek" id="scwWeekInit5">S</td>
+
+								<td class="scwWeek" id="scwWeekInit6">S</td>
+
+							</tr>
+
+						</thead>
+
+						<tbody id="scwCells" onclick="scwStopPropagation(event);">
+
+							<tr>
+
+								<td style="display: none;" class="scwWeekNo" id="scwWeek_0"></td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsExMonth" id="scwCell_0">31</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_1">1</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_2">2</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_3">3</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_4">4</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsWeekend" id="scwCell_5">5</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsWeekend" id="scwCell_6">6</td>
+
+							</tr>
+
+							<tr>
+
+								<td style="display: none;" class="scwWeekNo" id="scwWeek_1"></td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_7">7</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_8">8</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_9">9</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_10">10</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_11">11</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsWeekend" id="scwCell_12">12</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsWeekend" id="scwCell_13">13</td>
+
+							</tr>
+
+							<tr>
+
+								<td style="display: none;" class="scwWeekNo" id="scwWeek_2"></td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_14">14</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_15">15</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_16">16</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_17">17</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_18">18</td>
+
+								<td style="border-color: red; visibility: inherit;" class="scwCellsWeekend"
+
+									id="scwCell_19">19</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsWeekend" id="scwCell_20">20</td>
+
+							</tr>
+
+							<tr>
+
+								<td style="display: none;" class="scwWeekNo" id="scwWeek_3"></td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_21">21</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_22">22</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_23">23</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_24">24</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_25">25</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsWeekend" id="scwCell_26">26</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsWeekend" id="scwCell_27">27</td>
+
+							</tr>
+
+							<tr>
+
+								<td style="display: none;" class="scwWeekNo" id="scwWeek_4"></td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_28">28</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_29">29</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;" class="scwCells"
+
+									id="scwCell_30">30</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsExMonth" id="scwCell_31">1</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsExMonth" id="scwCell_32">2</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsExMonth" id="scwCell_33">3</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsExMonth" id="scwCell_34">4</td>
+
+							</tr>
+
+							<tr>
+
+								<td style="display: none;" class="scwWeekNo" id="scwWeek_5"></td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsExMonth" id="scwCell_35">5</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsExMonth" id="scwCell_36">6</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsExMonth" id="scwCell_37">7</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsExMonth" id="scwCell_38">8</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsExMonth" id="scwCell_39">9</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsExMonth" id="scwCell_40">10</td>
+
+								<td style="border-color: rgb(204, 204, 204); visibility: inherit;"
+
+									class="scwCellsExMonth" id="scwCell_41">11</td>
+
+							</tr>
+
+						</tbody>
+
+						<tfoot>
+
+							<tr id="scwFoot">
+
+								<td colspan="8" style="padding: 0px;">
+
+									<table width="100%">
+
+										<tbody>
+
+											<tr>
+
+												<td style="text-align: left;" id="scwClear" class="scwClear"><input
+
+														value="Clear" id="scwClearButton" class="scwClear"
+
+														onclick='scwTargetEle.value = "";scwHide();' type="button"></td>
+
+												<td style="text-align: right;" class="scwNow" id="scwNow">Today:
+
+													19-06-10</td>
+
+											</tr>
+
+										</tbody>
+
+									</table>
+
+								</td>
+
+							</tr>
+
+						</tfoot>
+
+					</table>
+
+				</td>
+
+			</tr>
+
+		</tbody>
+
+	</table>
+
+	<script language="javascript" type="text/javascript" src="index.php_files/xmlhttprequest.js"></script>
+
+	<script language="javascript" type="text/javascript" src="index.php_files/FinancialAccounts.js"></script>
+
+	<script language="javascript" type="text/javascript" src="index.php_files/FinancialsValidations.js"></script>
+
+	<script language="javascript" type="text/javascript" src="index.php_files/simpletreemenu.js"></script>
+
+	<style type="text/css">
+
+		body {
+
+			background-image: url(../Main/Layout/images/bg.jpg);
+
+			background-repeat: repeat-x;
+
+		}
+
+
+
+		/* CSS Document */
+
+		.treeview ul {
+
+			/*CSS for Simple Tree Menu*/
+
+			margin: 0;
+
+			padding: 0;
+
+		}
+
+
+
+		.treeview li {
+
+			/*Style for LI elements in general (excludes an LI that contains sub lists)*/
+
+			background: white url(Layout/images/list.gif) no-repeat left center;
+
+			list-style-type: none;
+
+			padding-left: 22px;
+
+			margin-bottom: 3px;
+
+		}
+
+
+
+		.treeview li.submenu {
+
+			/* Style for LI that contains sub lists (other ULs). */
+
+			background: white url(Layout/images/closed.gif) no-repeat left 1px;
+
+			cursor: hand !important;
+
+			cursor: pointer !important;
+
+		}
+
+
+
+		.treeview li.submenu ul {
+
+			/*Style for ULs that are children of LIs (submenu) */
+
+			display: none;
+
+			/*Hide them by default. Don't delete. */
+
+		}
+
+
+
+		.treeview .submenu ul li {
+
+			/*Style for LIs of ULs that are children of LIs (submenu) */
+
+			cursor: default;
+
+		}
+
+	</style>
+
+	<table style="border: 4px solid rgb(0, 81, 0); background-color: rgb(255, 255, 255); opacity: 0.75;" align="center"
+
+		border="0" width="1024">
+
+		<!--DWLayoutTable-->
+
+		<tbody>
+
+			<tr>
+
+				<td height="29" valign="middle"><span class="showModuleName">General Ledger</span></td>
+
+				<td colspan="2">
+
+					<table border="0" width="100%">
+
+						<tbody>
+
+							<tr>
+
+								<td align="right" width="231"><input name="minimize" src="index.php_files/Home.gif"
+
+										onclick="BackToHome()" value="Logout" height="20" type="image" width="20"></td>
+
+								<td width="38"><a href="#" class="contentTitle" onclick="BackToHome()">Home</a></td>
+
+								<td width="30"><input name="minimize" src="index.php_files/logout.gif"
+
+										onclick="Logout()" value="Logout" height="30" type="image" width="30">
+
+								</td>
+
+								<td width="62"><a href="#" class="contentTitle" onclick="Logout()">Logout</a></td>
+
+							</tr>
+
+							<tr>
+
+								<td colspan="4"><span class="showModuleName"><img src="Logo.png" style="float: right;"
+
+											height="57" width="56"></span></td>
+
+							</tr>
+
+						</tbody>
+
+					</table>
+
+				</td>
+
+			</tr>
+
+			<tr>
+
+				<td colspan="5" height="23" valign="top">
+
+					<div id="topmenu">
+
+						<ul id="topmenu">
+
+							<li><a href="javascript:void(0)"
+
+									onclick="LoadModuleFunctions('114');ChartOfAccounts();LoadQuickLinks('114')">Chart
+
+									of Accounts</a></li>
+
+							<li><a href="javascript:void(0)"
+
+									onclick="LoadModuleFunctions('115');GLSetup();LoadQuickLinks('115')">Setup</a></li>
+
+						</ul>
+
+					</div>
+
+				</td>
+
+			</tr>
+
+			<tr>
+
+				<td colspan="3" height="6" valign="top">
+
+					<div id="search_bar">Search.Your search appears here</div>
+
+				</td>
+
+			</tr>
+
+			<tr>
+
+				<td colspan="3" height="23" valign="top">
+
+					<div id="links_div">
+
+						<table border="0" width="100%">
+
+							<tbody>Lwala
+
+								<tr>
+
+									<td>
+
+										<table border="0">
+
+											<tbody>
+
+												<tr>
+
+													<td height="26"><img src="index.php_files/AddCurrency.gif"
+
+															onclick="AddChartOfAccount()" height="25" width="25"></td>
+
+													<td><a href="javascript:void(0)" onclick="AddChartOfAccount()"
+
+															style="text-decoration: none; color: rgb(102, 102, 102);">Add
+
+															Chart Of Account Group</a></td>
+
+												</tr>
+
+											</tbody>
+
+										</table>
+
+									</td>
+
+									<td>
+
+										<table border="0">
+
+											<tbody>
+
+												<tr>
+
+													<td height="26"><img src="index.php_files/money.jpg"
+
+															onclick="ShowJournalAccounts()" height="25" width="25"></td>
+
+													<td><a href="javascript:void(0)" onclick="ShowJournalAccounts()"
+
+															style="text-decoration: none; color: rgb(102, 102, 102);">Journal
+
+															Accounts</a></td>
+
+												</tr>
+
+											</tbody>
+
+										</table>
+
+									</td>
+
+								</tr>
+
+							</tbody>
+
+						</table>
+
+					</div>
+
+				</td>
+
+			</tr>
+
+			<tr>
+
+				<td colspan="3" height="768" valign="top">
+
+					<table border="0" width="100%">
+
+						<tbody>
+
+							<tr>
+
+								<td width="100%">
+
+									<div id="main_window" onclick="CloseAccountsMenu()"
+
+										style="overflow-x: hidden; overflow-y: auto;">
+
+										<table onclick="CloseAccountsMenu()" border="0" width="100%">
+
+											<tbody>
+
+												<tr>
+
+													<td class="table_sub_modules" colspan="2"> The Chart of Accounts
+
+													</td>
+
+												</tr>
+
+												<tr>
+
+													<td valign="top" width="87%">
+
+														<a
+
+															href="javascript:ddtreemenu.flatten('treemenu1',%20'expand')">Expand
+
+															All</a> | <a
+
+															href="javascript:ddtreemenu.flatten('treemenu1',%20'contact')">Collapse
+
+															All</a>
+
+														<ul id="treemenu1" class="treeview"
+
+															onclick="CloseAccountsMenu()">
+
+															<li style="background-image: url(Layout/images/closed.gif);"
+
+																class="submenu"><a href="#"
+
+																	onclick="LoadChartSubMenu('14',event)"
+
+																	style="text-decoration: none; color: rgb(153, 0, 0);">Staff
+
+																	Costs</a>
+
+																<ul style="display: none;" rel="closed">
+
+																	<li style="background-image: url(Layout/images/open.gif);"
+
+																		class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('23',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Salaries
+
+																			and Wages</a>
+
+																		<ul style="display: block;" rel="open">
+
+																			<li style="background-image: url(Layout/images/open.gif);"
+
+																				class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('40',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Salaries
+
+																					and wages A and E</a>
+
+																				<ul style="display: block;" rel="open">
+
+																				</ul>
+
+																			</li>
+
+																			<li style="background-image: url(Layout/images/open.gif);"
+
+																				class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('41',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Salaries
+
+																					and wages-Ward</a>
+
+																				<ul style="display: block;" rel="open">
+
+																				</ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																	<li class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('24',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">NSSF-Hospital
+
+																			Contribution</a>
+
+																		<ul rel="closed">
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('42',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">NSSF-Hospital
+
+																					Contribution-Wards</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('43',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">NSSF-Hospital
+
+																					Contribution-A and E</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																	<li style="background-image: url(Layout/images/open.gif);"
+
+																		class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('44',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Staff-Medical</a>
+
+																		<ul style="display: block;" rel="open">
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('45',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Staff-Medical-Wards</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('46',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Staff-Medical
+
+																					A and E</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																	<li style="background-image: url(Layout/images/open.gif);"
+
+																		class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('47',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Staff
+
+																			Welfare Expenses</a>
+
+																		<ul style="display: block;" rel="open">
+
+																			<li style="background-image: url(Layout/images/open.gif);"
+
+																				class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('48',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Staff
+
+																					Welfare-Wards</a>
+
+																				<ul style="display: block;" rel="open">
+
+																				</ul>
+
+																			</li>
+
+																			<li style="background-image: url(Layout/images/closed.gif);"
+
+																				class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('49',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Staff
+
+																					Welfare Expenses-A and E</a>
+
+																				<ul style="display: none;" rel="closed">
+
+																				</ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																</ul>
+
+															</li>
+
+															<li style="background-image: url(Layout/images/open.gif);"
+
+																class="submenu"><a href="#"
+
+																	onclick="LoadChartSubMenu('7',event)"
+
+																	style="text-decoration: none; color: rgb(153, 0, 0);">Sales</a>
+
+																<ul style="display: block;" rel="open">
+
+																	<li class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('25',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Pharmacy
+
+																			Sale</a>
+
+																		<ul rel="closed">
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('26',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Pharmacy
+
+																					Sale A AND E</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('27',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Pharmacy
+
+																					Sale Inpatient</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																	<li class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('28',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Lab
+
+																			Fee</a>
+
+																		<ul rel="closed">
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('29',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Labotary-Inpatient</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('30',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Lab
+
+																					Fee A and E</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																	<li class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('31',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Imaging
+
+																			Fee</a>
+
+																		<ul rel="closed">
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('32',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Imaging
+
+																					Fee Inpatient</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('33',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Imaging
+
+																					Fee A and E</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																	<li class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('34',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Proffessional
+
+																			Fees</a>
+
+																		<ul rel="closed">
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('35',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Doctors
+
+																					Fee A and E</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('36',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Professional
+
+																					Fee-Consultant clinic</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																	<li class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('37',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Procedure
+
+																			Fees</a>
+
+																		<ul rel="closed">
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('38',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Procedure
+
+																					Fees A and E</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('39',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Procedure
+
+																					Fees-Consultant Clinic</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																</ul>
+
+															</li>
+
+															<li style="background-image: url(Layout/images/closed.gif);"
+
+																class="submenu"><a href="#"
+
+																	onclick="LoadChartSubMenu('17',event)"
+
+																	style="text-decoration: none; color: rgb(153, 0, 0);">Proffessional
+
+																	Expenses</a>
+
+																<ul style="display: none;" rel="closed">
+
+																	<li style="background-image: url(Layout/images/open.gif);"
+
+																		class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('50',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Consultancy
+
+																			Fees</a>
+
+																		<ul style="display: block;" rel="open">
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('51',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Cosultancy-Pharmacy</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																			<li style="background-image: url(Layout/images/closed.gif);"
+
+																				class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('53',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Consultancy
+
+																					Fees-Financial Consulant</a>
+
+																				<ul style="display: none;" rel="closed">
+
+																				</ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																</ul>
+
+															</li>
+
+															<li class="submenu"><a href="#"
+
+																	onclick="LoadChartSubMenu('19',event)"
+
+																	style="text-decoration: none; color: rgb(153, 0, 0);">Marketing
+
+																	Expenses</a>
+
+																<ul rel="closed">
+
+																	<li class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('54',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Advertising
+
+																			and Marketing Costs</a>
+
+																		<ul rel="closed">
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('55',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Entertainment</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('56',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Adverts
+
+																					and Marketing</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																</ul>
+
+															</li>
+
+															<li class="submenu"><a href="#"
+
+																	onclick="LoadChartSubMenu('18',event)"
+
+																	style="text-decoration: none; color: rgb(153, 0, 0);">Finance
+
+																	Costs</a>
+
+																<ul rel="closed">
+
+																	<li class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('57',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Overdraft
+
+																			and Interests</a>
+
+																		<ul rel="closed">
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('58',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Overdraft
+
+																					and Interest</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																	<li class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('59',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Interests
+
+																			and Loans</a>
+
+																		<ul rel="closed">
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('60',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Interests
+
+																					on Bank Loans-KCB Long Term</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('61',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Interests
+
+																					on Loans-KCB Short Term</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																	<li class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('62',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Finance
+
+																			Lease Interest</a>
+
+																		<ul rel="closed"></ul>
+
+																	</li>
+
+																	<li class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('63',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Bank
+
+																			Charges</a>
+
+																		<ul rel="closed">
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('64',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Bank
+
+																					Charges-Nyeri</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																</ul>
+
+															</li>
+
+															<li class="submenu"><a href="#"
+
+																	onclick="LoadChartSubMenu('22',event)"
+
+																	style="text-decoration: none; color: rgb(153, 0, 0);">Exceptional
+
+																	Items</a>
+
+																<ul rel="closed">
+
+																	<li class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('65',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Exceptional
+
+																			Item</a>
+
+																		<ul rel="closed"></ul>
+
+																	</li>
+
+																</ul>
+
+															</li>
+
+															<li class="submenu"><a href="#"
+
+																	onclick="LoadChartSubMenu('15',event)"
+
+																	style="text-decoration: none; color: rgb(153, 0, 0);">Established
+
+																	Expenses</a>
+
+																<ul rel="closed">
+
+																	<li class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('66',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Eelectricity
+
+																			and Power</a>
+
+																		<ul rel="closed">
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('67',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Electricity
+
+																					and Power A and E</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('68',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Electricity
+
+																					and Power Ward</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																	<li class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('69',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Generator
+
+																			Costs</a>
+
+																		<ul rel="closed">
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('70',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Generator
+
+																					Fuel</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																	<li class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('71',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Water</a>
+
+																		<ul rel="closed">
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('72',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Water
+
+																					Nyeri</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('73',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Chlorine</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																	<li class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('74',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Rent
+
+																			and rates</a>
+
+																		<ul rel="closed">
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('75',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Rent
+
+																					and Rates-Wards</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('76',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">Rent
+
+																					and Rates A and E</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																</ul>
+
+															</li>
+
+															<li class="submenu"><a href="#"
+
+																	onclick="LoadChartSubMenu('21',event)"
+
+																	style="text-decoration: none; color: rgb(153, 0, 0);">Depreciation
+
+																	Expenses</a>
+
+																<ul rel="closed">
+
+																</ul>
+
+															</li>
+
+															<li class="submenu"><a href="#"
+
+																	onclick="LoadChartSubMenu('8',event)"
+
+																	style="text-decoration: none; color: rgb(153, 0, 0);">Cost
+
+																	of Sales</a>
+
+																<ul rel="closed">
+
+																</ul>
+
+															</li>
+
+															<li class="submenu"><a href="#"
+
+																	onclick="LoadChartSubMenu('16',event)"
+
+																	style="text-decoration: none; color: rgb(153, 0, 0);">Commnication
+
+																	Costs</a>
+
+																<ul rel="closed">
+
+																</ul>
+
+															</li>
+
+															<li style="background-image: url(Layout/images/open.gif);"
+
+																class="submenu"><a href="#"
+
+																	onclick="LoadChartSubMenu('20',event)"
+
+																	style="text-decoration: none; color: rgb(153, 0, 0);">Bad
+
+																	Debts Expenses</a>
+
+																<ul style="display: block;" rel="open">
+
+																</ul>
+
+															</li>
+
+															<li style="background-image: url(Layout/images/open.gif);"
+
+																class="submenu"><a href="#"
+
+																	onclick="LoadChartSubMenu('10',event)"
+
+																	style="text-decoration: none; color: rgb(153, 0, 0);">Administration
+
+																	Expenses</a>
+
+																<ul style="display: block;" rel="open">
+
+																	<li style="background-image: url(Layout/images/open.gif);"
+
+																		class="submenu"><a href="#"
+
+																			onclick="LoadChartSubMenu('11',event)"
+
+																			style="text-decoration: none; color: rgb(153, 0, 0);">Coldroom
+
+																			Liabilites</a>
+
+																		<ul style="display: block;" rel="open">
+
+																			<li class="submenu"><a href="#"
+
+																					onclick="LoadChartSubMenu('13',event)"
+
+																					style="text-decoration: none; color: rgb(153, 0, 0);">More
+
+																					Lialities</a>
+
+																				<ul rel="closed"></ul>
+
+																			</li>
+
+																		</ul>
+
+																	</li>
+
+																</ul>
+
+															</li>
+
+														</ul>
+
+														<script type="text/javascript">
+
+															//ddtreemenu.createTree(treeid, enablepersist, opt_persist_in_days (default is 1))
+
+															ddtreemenu.createTree("treemenu1", true)
+
+															ddtreemenu.createTree("treemenu2", false)
+
+														</script>
+
+													</td>
+
+													<td valign="top" width="13%">
+
+														<table border="0" width="100%">
+
+															<tbody>
+
+																<tr>
+
+																	<td>
+
+																		<div id="ChartOfAccountsDetails"></div>
+
+																	</td>
+
+																</tr>
+
+															</tbody>
+
+														</table>
+
+													</td>
+
+												</tr>
+
+											</tbody>
+
+										</table>
+
+									</div>
+
+								</td>
+
+								<td width="0%">
+
+									<div id="quick_links"></div>
+
+								</td>
+
+							</tr>
+
+						</tbody>
+
+					</table>
+
+				</td>
+
+			</tr>
+
+			<tr>
+
+				<td height="48">
+
+				</td>
+
+				<td width="4">
+
+				</td>
+
+				<td width="376"> </td>
+
+			</tr>
+
+		</tbody>
+
+	</table>
+
+	<input name="SearchHeight" id="SearchHeight" value="190" type="hidden">
+
+	<input name="ChartOfAccountNo" id="ChartOfAccountNo" type="hidden">
+
+	<div id="QuitWindowDiv" ondblclick="javascript:getReadyToMove('QuitWindowDiv', event);"
+
+		onmouseup="javascript:dropLoadedObject(event)" onclick="javascript:dropLoadedObject(event);"></div>
+
+	<div id="alert_div" ondblclick="javascript:getReadyToMove('alert_div', event);"
+
+		onmouseup="javascript:dropLoadedObject(event)" onclick="javascript:dropLoadedObject(event);"></div>
+
+	<div style="display: block; position: absolute; left: 25%; top: 25%; width: auto; height: auto;" id="popup_div"
+
+		ondblclick="javascript:getReadyToMove('popup_div', event);" onmouseup="javascript:dropLoadedObject(event)"
+
+		onclick="javascript:dropLoadedObject(event);">
+
+		<link href="index.php_files/interface.html" rel="stylesheet" type="text/css">
+
+		<table class="formborder" bgcolor="#e4e4e4" border="0" width="900">
+
+			<tbody>
+
+				<tr>
+
+					<th scope="col">
+
+						<table class="bordercolor2"
+
+							style="background-image: url(../Main/Layout/images/form_top.jpg); background-repeat: repeat-x;"
+
+							border="0" width="100%">
+
+							<tbody>
+
+								<tr>
+
+									<td class="formtop" width="94%">Journal Accounts for Sales <input
+
+											name="ChartAccountId" id="ChartAccountId" value="7" type="hidden"></td>
+
+									<td class="formtop" width="6%"><img src="index.php_files/close.png"
+
+											onclick="closepopupdiv()" align="right" height="20" width="20">
+
+									</td>
+
+								</tr>
+
+							</tbody>
+
+						</table>
+
+					</th>
+
+				</tr>
+
+				<tr>
+
+					<td>
+
+						<table border="0" width="100%">
+
+							<tbody>
+
+								<tr>
+
+									<td><input name="addJournalAccount" src="index.php_files/AddCurrency.gif"
+
+											onclick="AddJournalAccount()" value="AddJournalAccount" height="30"
+
+											type="image" width="30"><a href="#" onclick="AddJournalAccount()"
+
+											style="text-decoration: none;">Add </a></td>
+
+									<td><input name="EditJournalAccount" src="index.php_files/Edit.gif"
+
+											onclick="EditJournalAccount()" value="Logout" height="30" type="image"
+
+											width="30"><a href="#" onclick="EditJournalAccount()"
+
+											style="text-decoration: none;">Edit</a></td>
+
+									<td><input name="DeleteJournalAccount" src="index.php_files/Delete.gif"
+
+											onclick="DeleteJournalAccount()" value="Logout" height="30" type="image"
+
+											width="30"><a href="#" onclick="DeleteJournalAccount()"
+
+											style="text-decoration: none;">Delete</a></td>
+
+									<td><input name="LinkJournalAccount" src="index.php_files/Link.gif"
+
+											onclick="LinkJournalAccount()" value="Logout" height="30" type="image"
+
+											width="30"><a href="#" onclick="LinkJournalAccount()"
+
+											style="text-decoration: none;">Link Account</a></td>
+
+								</tr>
+
+							</tbody>
+
+						</table>
+
+					</td>
+
+				</tr>
+
+				<tr>
+
+					<td  align="center">Sorry.No financial Journal Accounts Defined in the system for the
+
+						selected Chart of Accounts
+
+					</td>
+
+				</tr>
+
+			</tbody>
+
+		</table>
+
+	</div>
+
+	<div style="display: none; position: absolute; left: 15%; top: 25%; width: auto; height: auto;" id="popup_div_x"
+
+		ondblclick="javascript:getReadyToMove('popup_div_x', event);" onmouseup="javascript:dropLoadedObject(event)"
+
+		onclick="javascript:dropLoadedObject(event);">
+
+		<link href="index.php_files/interface.html" rel="stylesheet" type="text/css">
+
+		<table class="formborder" bgcolor="#e4e4e4" border="0" width="700">
+
+			<tbody>
+
+				<tr>
+
+					<th scope="col">
+
+						<table class="bordercolor2"
+
+							style="background-image: url(../Main/Layout/images/form_top.jpg); background-repeat: repeat-x;"
+
+							border="0" width="100%">
+
+							<tbody>
+
+								<tr>
+
+									<td class="formtop" width="94%">Posted Transactions for Staff Welfare Expenses
+
+										<input name="ChartAccountId" id="ChartAccountId" value="47" type="hidden">
+
+									</td>
+
+									<td class="formtop" width="6%"><img src="index.php_files/close.png"
+
+											onclick="closepopupdiv_x()" align="right" height="20" width="20">
+
+									</td>
+
+								</tr>
+
+							</tbody>
+
+						</table>
+
+					</th>
+
+				</tr>
+
+				<tr>
+
+					<td>
+
+						<table border="0" width="100%">
+
+							<tbody>
+
+								<tr>
+
+									<td><input name="addPostAccount" src="index.php_files/AddCurrency.gif"
+
+											onclick="AddPostAccountEntry()" value="AddPostAccount" height="30"
+
+											type="image" width="30">
+
+										<a href="#" onclick="AddPostAccountEntry()" style="text-decoration: none;">Add
+
+										</a>
+
+									</td>
+
+									<td><input name="EditPostAccount" src="index.php_files/Edit.gif"
+
+											onclick="EditPostAccountEntry()" value="Logout" height="30" type="image"
+
+											width="30">
+
+										<a href="#" onclick="EditPostAccountEntry()"
+
+											style="text-decoration: none;">Edit</a>
+
+									</td>
+
+									<td><input name="DeletePostAccount" src="index.php_files/Delete.gif"
+
+											onclick="DeletePostAccountEntry()" value="Logout" height="30" type="image"
+
+											width="30">
+
+										<a href="#" onclick="DeletePostAccountEntry()"
+
+											style="text-decoration: none;">Delete</a>
+
+									</td>
+
+								</tr>
+
+							</tbody>
+
+						</table>
+
+					</td>
+
+				</tr>
+
+				<tr>
+
+					<td>
+
+						<div id="PostedTransactions">
+
+							<link href="index.php_files/interface.html" rel="stylesheet" type="text/css">
+
+							<table border="0" width="100%">
+
+								<tbody>
+
+									<tr>
+
+										<td  align="center">Sorry, Africare is not aware of any entries for
+
+											the selected Chart of Account</td>
+
+									</tr>
+
+								</tbody>
+
+							</table>.
+
+						</div>
+
+					</td>
+
+				</tr>
+
+				<tr>
+
+					<th scope="row"><input name="ChartAccountId" id="ChartAccountId" value="47" type="hidden"></th>
+
+				</tr>
+
+			</tbody>
+
+		</table>
+
+	</div>
+
+	<div style="display: block; position: absolute; left: 25%; top: 35%; width: auto; height: auto;" id="popup_div_1"
+
+		ondblclick="javascript:getReadyToMove('popup_div_1', event);" onmouseup="javascript:dropLoadedObject(event)"
+
+		onclick="javascript:dropLoadedObject(event);">
+
+		<link href="index.php_files/interface.html" rel="stylesheet" type="text/css">
+
+		<table class="formborder" bgcolor="#e4e4e4" border="0" width="100%">
+
+			<tbody>
+
+				<tr>
+
+					<th scope="col">
+
+						<table class="bordercolor2"
+
+							style="background-image: url(../Main/Layout/images/form_top.jpg); background-repeat: repeat-x;"
+
+							border="0" width="100%">
+
+							<tbody>
+
+								<tr>
+
+									<td class="formtop" width="94%">Add Account</td>
+
+									<td class="formtop" width="6%"><img src="index.php_files/close.png"
+
+											onclick="closepopupdiv_1()" align="right" height="20" width="20">
+
+									</td>
+
+								</tr>
+
+							</tbody>
+
+						</table>
+
+					</th>
+
+				</tr>
+
+				<tr>
+
+					<td>
+
+						<table border="0" width="100%">
+
+							<tbody>
+
+								<tr>
+
+									<td>Account Name </td>
+
+									<td><input name="AccountName"  id="AccountName" type="text"></td>
+
+									<td>GL Account Number </td>
+
+									<td><input name="GLAccountNumber"  id="GLAccountNumber" type="text">
+
+									</td>
+
+								</tr>
+
+								<tr>
+
+									<td>Date</td>
+
+									<td><input name="AccountDate"  id="AccountDate"
+
+											onfocus="scwShow(this,event);" onclick="scwShow(this,event);"
+
+											readonly="true" type="text"></td>
+
+									<td>Ref No </td>
+
+									<td><input name="RefNo"  id="RefNo" type="text"></td>
+
+								</tr>
+
+								<tr>
+
+									<td>Type Of Account </td>
+
+									<td>
+
+										<label>
+
+											<input name="TypeOfAccount" value="DR" onclick=" GetTypeAccValue()"
+
+												type="radio">
+
+											DR</label>
+
+										<label>
+
+											<input name="TypeOfAccount" value="CR" onclick=" GetTypeAccValue()"
+
+												type="radio">
+
+											CR</label>
+
+										<br><input name="TypeAccVal" id="TypeAccVal" value="DR" type="hidden">
+
+									</td>
+
+									<td>Account Period </td>
+
+									<td><input name="AccountPeriod"  id="AccountPeriod" type="text"></td>
+
+								</tr>
+
+								<tr>
+
+									<td>Budget Period </td>
+
+									<td><input name="BudgetPeriod"  id="BudgetPeriod" type="text"></td>
+
+									<td>&nbsp;</td>
+
+									<td>&nbsp;</td>
+
+								</tr>
+
+								<tr>
+
+									<td>Recurring</td>
+
+									<td><input name="AccountRecurring" id="AccountRecurring" value="1" type="checkbox">
+
+									</td>
+
+									<td>Recurring Period </td>
+
+									<td><input name="RecurringPeriod"  id="RecurringPeriod" type="text">
+
+									</td>
+
+								</tr>
+
+								<tr>
+
+									<td>Account Description </td>
+
+									<td><textarea name="AccountDescription" cols="30" 
+
+											id="AccountDescription"></textarea></td>
+
+									<td>Justification</td>
+
+									<td><textarea name="AccountJustification" cols="30" 
+
+											id="AccountJustification"></textarea></td>
+
+								</tr>
+
+							</tbody>
+
+						</table>
+
+					</td>
+
+				</tr>
+
+				<tr>
+
+					<th scope="row"><input name="JournalAccountId" id="JournalAccountId" type="hidden">
+
+						<input name="Aves" id="Aves" value="Save Account" onclick="StoreJournalAccount()"
+
+							style="float: right;" type="button">
+
+					</th>
+
+				</tr>
+
+			</tbody>
+
+		</table>
+
+	</div>
+
+	<div id="popup_div_2" ondblclick="javascript:getReadyToMove('popup_div_2', event);"
+
+		onmouseup="javascript:dropLoadedObject(event)" onclick="javascript:dropLoadedObject(event);"> </div>
+
+	<div id="print_div" ondblclick="javascript:getReadyToMove('print_div', event);"
+
+		onmouseup="javascript:dropLoadedObject(event)" onclick="javascript:dropLoadedObject(event);"> </div>
+
+	<div id="alert_overlay"></div>
+
+	<div id="loading_div"
+
+		style="width: 400px; display: none; position: absolute; top: 300px; left: 400px; z-index: 1000;">
+
+		<div align="center">
+
+			<table style="border: 1px dotted rgb(93, 93, 93);" align="center" bgcolor="#ffffff" border="0"
+
+				cellpadding="3" cellspacing="1" width="100%">
+
+				<tbody>
+
+					<tr>
+
+						<td>&nbsp;</td>
+
+					</tr>
+
+					<tr>
+
+						<td align="center"><img src="index.php_files/loading.gif" height="50" width="50"></td>
+
+					</tr>
+
+					<tr>
+
+						<td  align="center">Loading .... please wait.</td>
+
+					</tr>
+
+					<tr>
+
+						<td>&nbsp;</td>
+
+					</tr>
+
+				</tbody>
+
+			</table>
+
+		</div>
+
+	</div>
+
+	<div style="display: none; position: absolute; left: 253px; top: 318px; width: auto; height: auto;"
+
+		id="Submenu_div">
+
+		<link href="index.php_files/interface.html" rel="stylesheet" type="text/css">
+
+		<table bgcolor="#fcfcfc" border="0" width="190">
+
+			<tbody>
+
+				<tr>
+
+					<td onmouseover="this.bgColor='#999999'" onmouseout="this.bgColor=''" align="left" bgcolor=""><a
+
+							href="#%27" class="SubMenuText" onclick="AddChartOfAccount(7)"
+
+							style="text-decoration: none;">Add New Sub Account</a>
+
+					</td>
+
+				</tr>
+
+				<tr>
+
+					<td onmouseover="this.bgColor='#999999'" onmouseout="this.bgColor=''" align="left" bgcolor=""><a
+
+							href="#%27" class="SubMenuText" onclick="EditChartDetails(7)"
+
+							style="text-decoration: none;">Edit Account Details </a>
+
+					</td>
+
+				</tr>
+
+				<tr>
+
+					<td onmouseover="this.bgColor='#999999'" onmouseout="this.bgColor=''" align="left" bgcolor=""><a
+
+							href="#%27" class="SubMenuText" onclick="LoadChartOfAccountsDetails(7)"
+
+							style="text-decoration: none;">View Account Details </a>
+
+					</td>
+
+				</tr>
+
+				<tr>
+
+					<td onmouseover="this.bgColor='#999999'" onmouseout="this.bgColor=''" align="left" bgcolor=""><a
+
+							href="#%27" class="SubMenuText" onclick="DeleteChartAccount(7)"
+
+							style="text-decoration: none;">Delete Account</a>
+
+					</td>
+
+				</tr>
+
+				<tr>
+
+					<td class="SubMenuText" onmouseover="this.bgColor='#999999'" onmouseout="this.bgColor=''"
+
+						align="left" bgcolor=""> <a href="#%27" class="SubMenuText" onclick="CloseAccountsMenu()"
+
+							style="text-decoration: none;">Just Expand Menu
+
+						</a></td>
+
+				</tr>
+
+				<tr>
+
+					<td class="SubMenuText" onmouseover="this.bgColor='#999999'" onmouseout="this.bgColor=''"
+
+						align="left" bgcolor=""><a href="#%27" class="SubMenuText" onclick="MapToModuleTransactions(7)"
+
+							style="text-decoration: none;">Map To Module Transactions
+
+						</a></td>
+
+				</tr>
+
+				<tr>
+
+					<td class="SubMenuText" onmouseover="this.bgColor='#999999'" onmouseout="this.bgColor=''"
+
+						align="left" bgcolor=""><a href="#%27" class="SubMenuText" onclick="ShowJournalAccounts(7)"
+
+							style="text-decoration: none;">Journal Accounts
+
+						</a></td>
+
+				</tr>
+
+				<tr>
+
+					<td class="SubMenuText" onmouseover="this.bgColor='#999999'" onmouseout="this.bgColor=''"
+
+						align="left" bgcolor=""><a href="#%27" class="SubMenuText"
+
+							onclick="PostedChartAccountTransactions(7)" style="text-decoration: none;">Posted
+
+							Transactions
+
+						</a></td>
+
+				</tr>
+
+			</tbody>
+
+		</table>
+
+	</div>
+
+	<input name="loggedInUser" id="LoggedInUser" value="75" type="hidden">
+
+</body>
+
+
+
+</html>

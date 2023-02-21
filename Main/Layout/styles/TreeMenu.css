@@ -1,0 +1,58 @@
+ul.tree-menu {
+    width:400px;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: tahoma;
+    margin: 0;
+    padding:10px;
+	
+}
+ul.tree-menu ul {
+    margin: 0 0 0 20p;x;
+    padding: 2px 0 0 0;
+}
+ul.tree-menu li {
+    list-style-type: none;
+    margin: 0;
+    padding: 20px;
+	
+}
+ul.tree-menu li.section {
+    background-image: url(../../../FinancialAccounts/Layout/images/closed.gif);
+    background-repeat: no-repeat;
+    background-position: top left;
+    padding-top: 1px;
+    padding-bottom:1px;
+	background-color:#DDFFDD;
+	border:solid 1px #7DD2FF;
+	width:100%;
+}
+ul.tree-menu li.section-open {
+    background-image: url(../../../FinancialAccounts/Layout/images/open.gif);
+    background-repeat: no-repeat;
+    background-position: top left;
+    padding-top: 1px;
+    padding-bottom: 1px;
+	background-color:#ACFFAC;
+	border:solid 1px #7DD2FF;
+	width:100%;
+}
+ul.tree-menu li.box {
+    background-image: url(../../../FinancialAccounts/Layout/images/list.gif);
+    background-repeat: no-repeat;
+    background-position: top left;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+ul.tree-menu a {
+    margin-left: 20px;
+    color: #0000ff;
+    text-decoration: none;
+   
+}
+ul.tree-menu a:hover {
+    margin-left: 20px;
+    color: #0000ff;
+    text-decoration: underline;
+    white-space: nowrap;
+}

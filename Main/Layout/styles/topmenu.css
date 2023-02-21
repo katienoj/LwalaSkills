@@ -1,0 +1,48 @@
+/* CSS Document */
+#topmenu{
+
+	background-repeat: repeat;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background-color:rgb(66, 65, 65);
+	background-size: 100%; 
+}
+#topmenu ul{
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+#topmenu li{
+	display: inline;
+	padding-top: 9px;
+	padding-bottom: 7px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color:#CCCCCC;
+}
+#topmenu a{
+	font-weight: bold;
+	text-decoration: none;
+	color: #f1efef;
+	padding-top: 11px;
+	padding-right: 5px;
+	padding-bottom: 7px;
+	padding-left: 0px;	
+}
+#topmenu a:hover{
+background-color: grey;	
+background-repeat: repeat-x;
+
+	padding-top: 11px;
+	padding-bottom: 7px;
+	padding-right: 5px;
+	padding-left: 0px;
+}
+#topmenu a:active{
+	background-color: grey;
+	background-repeat: repeat-x;
+	padding-top: 11px;
+	padding-bottom: 7px;
+	padding-right: 5px;
+	padding-left: 0px;
+}	
+	

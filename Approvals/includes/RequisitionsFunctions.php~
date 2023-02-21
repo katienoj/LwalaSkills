@@ -1,0 +1,236 @@
+<?php 
+
+function RequestDepartment($RequestId)
+{
+    global $conn;
+	
+	$sql=mysql_query("SELECT DepartmentId FROM InternalStockRequests WHERE Id='$RequestId'") or die(mysql_error());
+	
+    $result=mysqli_fetch_assoc($sql);
+	$DepartmentId=$result['DepartmentId'];
+	
+	return $DepartmentId;
+}     
+
+function CatName($CatId)
+{
+//This function gets the name of a next of kin relationship based on the id supplied.It should be self explanatory
+
+    global $conn;
+	
+	$sql=mysql_query("SELECT CatName FROM StockCategory WHERE Id='$CatId'") or die(mysql_error());
+	$result=mysqli_fetch_assoc($sql);
+	$name=$result['CatName'];
+	if($CatId==0)
+	{
+	  $name="Main view";
+	}
+	
+	return $name;
+}
+
+function StockName($StockId)
+{
+global $conn;
+	
+	$sql=mysql_query("SELECT StockName FROM StockTable WHERE Id='$StockId'") or die(mysql_error());
+	$result=mysqli_fetch_assoc($sql);
+	$name=$result['StockName'];
+	return $name;
+}
+function StockId($StockName)
+{
+global $conn;
+	
+	$sql=mysql_query("SELECT Id FROM StockTable WHERE StockName='$StockName'") or die(mysql_error());
+	$result=mysqli_fetch_assoc($sql);
+	$Id=$result['Id'];
+	return $Id;
+}
+
+function StockCategory($StockId)
+{
+global $conn;
+	
+	$sql=mysql_query("SELECT CatId FROM StockTable WHERE Id='$StockId'") or die(mysql_error());
+	$result=mysqli_fetch_assoc($sql);
+	$CatId=$result['CatId'];
+	return $CatId;
+}
+
+
+
+
+function PackageName($PackagingId)
+{
+    global $conn;
+	$sql=mysql_query("SELECT PackageName FROM SetupPackaging WHERE Id='$PackagingId'") or die(mysql_error());
+	$result=mysqli_fetch_assoc($sql);
+	$name=$result['PackageName'];
+	return $name;
+
+}
+function PackageTypeName($PackagingTypeId)
+{
+    global $conn;
+	$sql=mysql_query("SELECT PackageType FROM PackageType WHERE Id='$PackagingTypeId'") or die(mysql_error());
+	$result=mysqli_fetch_assoc($sql);
+	$name=$result['PackageType'];
+	return $name;
+
+}
+function PackagePrice($StockItem,$ThePackage)
+{
+    global $conn;
+	$strSQL="SELECT Price FROM StockPackaging WHERE StockId='$StockItem' AND Id='$ThePackage'";
+	// $strSQL;
+	$sql=mysql_query($strSQL) or die(mysql_error());
+	$result=mysqli_fetch_assoc($sql);
+	//echo $result['Price']."<br>";
+	return $result['Price'];
+	
+}
+function PackagingInfo($Packaging)
+{
+    global $conn;
+	$strSQL="SELECT PackagingId FROM StockPackaging WHERE Id='$Packaging'";
+	//echo $strSQL;
+	$sql=mysql_query($strSQL) or die(mysql_error());
+	$result=mysqli_fetch_assoc($sql);
+	$PackagingTypeId=$result['PackagingId'];
+	$PackageName=PackageName($PackagingTypeId);
+	
+	return $PackageName;
+	
+	
+
+}
+function RequestTotal($SelectStockQties)
+{
+    global $conn;
+	
+	$SelectedStock=explode(':',$SelectStockQties);
+	$Total=0;
+	foreach($SelectedStock as $Stock)
+	{
+	//echo $Stock."<br>";
+	   if($Stock!='')
+	   {
+	     $StockDetails=explode('@',$Stock);
+		 $ThePackage=@$StockDetails[1];
+		 $OtherDetails=explode('*',$StockDetails[0]);
+		 $Qty=$OtherDetails[1];
+		 $StockItem=$OtherDetails[0];
+		 $PackagePrice=PackagePrice($StockItem,$ThePackage);
+		 $TotalForPackage=$PackagePrice * $Qty;
+		 $Total+=$TotalForPackage;
+	   }
+		  
+	}
+	return $Total;
+}
+
+function StockCategoryName($CatId)
+{
+//This function gets the name of a next of kin relationship based on the id supplied.It should be self explanatory
+
+    global $conn;
+	
+	$sql=mysql_query("SELECT CatName FROM StockCategory WHERE Id='$CatId'") or die(mysql_error());
+	$result=mysqli_fetch_assoc($sql);
+	$name=$result['CatName'];
+	if($name=='')
+	{
+	$name="No Parent Category";
+	}
+	return $name;
+}
+
+
+function DecreaseStockAmt($StockId,$SupplyQty)
+{
+     global $conn;
+	 
+	 $sql=mysql_query("SELECT quantity FROM StockTable WHERE Id='$StockId'") or die(mysql_error());
+	 $result=mysqli_fetch_assoc($sql);
+	 $qty=$result['quantity'];
+	 
+	 $RemStock=$qty-$SupplyQty;
+	 
+	 $sql=mysql_query("UPDATE StockTable SET quantity='$RemStock' WHERE Id='$StockId'") or die(mysql_error());
+	 
+}
+
+function  CheckIfServiceComplete($RequestId,$StockDetails)
+{  
+    global $conn;
+	$ifComplete=0;
+	$count=0;
+	$Completed=0;
+	$TheStock=explode(':',$StockDetails);
+	
+	foreach($TheStock as $StockDetail)
+	{
+	     if($StockDetail!='' or !empty($StockDetail))
+		 {
+		      $StockInfo=explode('*',$StockDetail);
+			   $StockId=$StockInfo[0];
+			   $OtherDetails=explode('@',$StockInfo[1]);
+			   $Qty=$OtherDetails[0];
+			   $Packaging=$OtherDetails[1];
+                           //echo "Stock Id ".$StockId." QTY ".$Qty." Packaging ".$Packaging."<br>";
+			   $SuppliedQty=CheckSuppliedQty($RequestId,$StockId);
+                           //echo "Supplied Qty ".$SuppliedQty." Requested Qty ".$Qty."<br>";
+			   if($SuppliedQty>=$Qty)
+			   {
+			        $ifComplete+=1;
+			   }   
+		 }
+		 $count++; 
+                 //echo "<br>Count ".$count." ifComplete ".$ifComplete."<br>";
+	}
+         //echo "Complete ".$ifComplete." Stock Count ".count($TheStock)."<br>";
+	if(($ifComplete!=0 && count($TheStock)!=0) &&  $ifComplete==(count($TheStock)-1))
+	{
+	     $Completed=1;
+	}
+	else
+	{
+	    $Completed=0;
+	}
+	return $Completed;
+
+}
+
+
+function CheckSuppliedQty($RequestId,$StockId)
+{
+     global $conn;
+	 $StockQtyIn=0;
+	 
+	 $sql=mysql_query("SELECT StockQtyIn FROM DepartmentStock WHERE RequestId='$RequestId' AND StockId='$StockId'") or die(mysql_error());
+	while($result=mysqli_fetch_assoc($sql))
+	{ 
+	 $QtyIn=$result['StockQtyIn'];
+	 $StockQtyIn+=$QtyIn;
+	 }
+      // echo "Stock Qty In".$StockQtyIn."<br>";
+	 return $StockQtyIn;
+	 
+}
+function MarkRequestAsServiced($RequestId,$UserId)
+{
+     global $conn;
+	 $strSQL="UPDATE InternalStockRequests SET ServiceStatus='1',ServicedBy='$UserId' WHERE Id='$RequestId'";
+         echo $strSQL;
+	 $sql=mysql_query($strSQL) or die(mysql_error());
+         
+  
+	 
+}
+?>
+
+
+
+
+

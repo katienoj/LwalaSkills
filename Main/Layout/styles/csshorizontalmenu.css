@@ -1,0 +1,11 @@
+
+/*Sub level menu list items*/
+
+
+/* Holly Hack for IE \*/
+* html .horizontalcssmenu ul li { float: left; height: 2%; text-align:left;}
+* html .horizontalcssmenu ul li a { height: 2%; }
+a {color:#004f99; text-decoration:none; font-family: Verdana, Arial, Sans-serif; font-size:11px; font-weight: normal; text-align:left; list-style:outside;}
+
+a:active {color:#333990; text-decoration:none; font-family: Verdana, Arial, Sans-serif; font-size:11px; font-weight: normal;  text-decoration:none; text-align:left;list-style:outside; list-style-position:inside;"}
+/* End *

@@ -1,0 +1,60 @@
+<?php 
+session_start();
+$UserId=$_SESSION['UserId'];
+$EmployeeId=$_SESSION['EmployeeId'];
+require_once '../../Main/Config/db_conn.php';
+require_once '../includes/RequisitionsFunctions.php';
+
+
+if($UserId=='')
+{
+$UserId=ResolveUserId(number_format($EmployeeId));
+}
+
+$StockDetails=explode(':',$_REQUEST['StockDetails']);
+$RequestId=$_REQUEST['RequestId'];
+$SupplyQties=explode(':',$_REQUEST['SupplyQties']);
+$count=0;
+$ifComplete='';
+foreach($StockDetails as $StockDetail)
+{
+     if($StockDetail==' ' or empty($StockDetail))
+	 {
+	 }
+	 else
+	 {
+	   // echo "<br>".$StockDetail."<br>";
+	    
+		 $SupplyQty=$SupplyQties[$count];
+		 $StockItems=explode('*',$StockDetail);
+		 $StockId=$StockItems[0];
+		
+		 $OtherStockDetails=explode('@',$StockItems[1]);
+		 $QtyOrdered=$OtherStockDetails[0];
+		 $Packaging=$OtherStockDetails[1];
+		 $RemToSupply=$QtyOrdered-$SupplyQty;
+		 $DepartmentId=RequestDepartment($RequestId);
+		 $sql=mysql_query("INSERT INTO DepartmentStock(DepartmentId,StockId,StockQtyIn,RequestId,RemToSupply) VALUES('$DepartmentId','$StockId','$SupplyQty','$RequestId','$RemToSupply')") or die(mysql_error());
+		 if($sql==1)
+		 {
+		 DecreaseStockAmt($StockId,$SupplyQty);
+		$IfComplete=CheckIfServiceComplete($RequestId,$_REQUEST['StockDetails']);
+		 if($IfComplete==1)
+		 {
+                    //echo "Service Complete";
+		    MarkRequestAsServiced($RequestId,$UserId);
+		 }
+	
+		 echo "1";
+		 }
+		 else
+		 {
+		 echo "Unable to Service Request";
+		 } /**/
+	}
+      $count++;
+}
+
+
+
+?>
