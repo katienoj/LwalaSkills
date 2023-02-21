@@ -133,25 +133,7 @@ $sqlx=mysqli_query($conn, "SELECT HospitalName FROM SetHospital")or die(mysqli_e
            ?>
          </a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-link">
-            <span class="badge badge-primary"></span>
-          </i>
-          Dashboards
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="http://<?php echo $_SERVER['SERVER_ADDR'];?>/AccountsDashBoard.php"><input type="button" class="btn btn-default btn-block" value="Accounts Dashboard"></a>
-          <a class="dropdown-item" href="http://<?php echo $_SERVER['SERVER_ADDR'];?>/ClinicsDashBoard.php"><input type="button" class="btn btn-default btn-block" value="Clinics Dashboard"></a>
-          <a class="dropdown-item" href="http://<?php echo $_SERVER['SERVER_ADDR'];?>/HrDashBoard.php"><input type="button" class="btn btn-default btn-block" value="HR Dashboard"></a>
-          <a class="dropdown-item" href="http://<?php echo $_SERVER['SERVER_ADDR'];?>/InpatientDashBoard.php"><input type="button" class="btn btn-default btn-block" value="Inpatient Dashboard"></a>
-          <a class="dropdown-item" href="http://<?php echo $_SERVER['SERVER_ADDR'];?>/InvestigationsDashBoard.php"><input type="button" class="btn btn-default btn-block" value="Lab Dashboard"></a>
-          <a class="dropdown-item" href="http://<?php echo $_SERVER['SERVER_ADDR'];?>/MainDashBoard.php"><input type="button" class="btn btn-default btn-block" value="Main Dashboard"></a>
-          <a class="dropdown-item" href="http://<?php echo $_SERVER['SERVER_ADDR'];?>/PharmacyDashBoard.php"><input type="button" class="btn btn-default btn-block" value="Pharmacy Dashboard"></a>
-          <a class="dropdown-item" href="http://<?php echo $_SERVER['SERVER_ADDR'];?>/RegistryDashBoard.php"><input type="button" class="btn btn-default btn-block" value="Registry Dashboard"></a>
-          <a class="dropdown-item" href="http://<?php echo $_SERVER['SERVER_ADDR'];?>/StoresDashBoard.php"><input type="button" class="btn btn-default btn-block" value="Stores Dashboard"></a>
-        </div>
-      </li>
+      
           <li class="nav-item">
             <a class="nav-link" data-widget="navbar-search" href="#" role="button">
               <i class="fas fa-search" ></i>
@@ -172,91 +154,8 @@ $sqlx=mysqli_query($conn, "SELECT HospitalName FROM SetHospital")or die(mysqli_e
               </form>
             </div>
           </li>
-          <!-- Messages Dropdown Menu -->
-          <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-              <i class="far fa-comments"></i>
-              <span class="badge badge-danger navbar-badge">3</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-              <a href="#" class="dropdown-item">
-                <!-- Message Start -->
-                <div class="media">
-                  <img src="../admindashboard/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-                  <div class="media-body">
-                    <h3 class="dropdown-item-title">
-                      John
-                      <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                    </h3>
-                    <p class="text-sm">Call me whenever you can...</p>
-                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                  </div>
-                </div>
-                <!-- Message End -->
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <!-- Message Start -->
-                <div class="media">
-                  <img src="../admindashboard/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                  <div class="media-body">
-                    <h3 class="dropdown-item-title">
-                      Client Test
-                      <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                    </h3>
-                    <p class="text-sm">I got your message bro</p>
-                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                  </div>
-                </div>
-                <!-- Message End -->
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <!-- Message Start -->
-                <div class="media">
-                  <img src="../admindashboard/dist/img/unisex.png" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                  <div class="media-body">
-                    <h3 class="dropdown-item-title">
-                      Client Test2
-                      <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                    </h3>
-                    <p class="text-sm">The subject goes here</p>
-                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                  </div>
-                </div>
-                <!-- Message End -->
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-            </div>
-          </li>
-          <!-- Notifications Dropdown Menu -->
-          <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-              <i class="far fa-bell"></i>
-              <span class="badge badge-primary navbar-badge">15</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-              <span class="dropdown-item dropdown-header">15 Notifications</span>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <i class="fas fa-envelope mr-2"></i> 4 new messages
-                <span class="float-right text-muted text-sm">3 mins</span>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <i class="fas fa-users mr-2"></i> 8 friend requests
-                <span class="float-right text-muted text-sm">12 hours</span>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">
-                <i class="fas fa-file mr-2"></i> 3 new reports
-                <span class="float-right text-muted text-sm">2 days</span>
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-            </div>
-          </li>
+          
+          
           <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
               <i class="fas fa-expand-arrows-alt"></i>
@@ -269,10 +168,7 @@ $sqlx=mysqli_query($conn, "SELECT HospitalName FROM SetHospital")or die(mysqli_e
           </li>
         </ul>
       </nav>
-      <!-- /.navbar -->
-            <!-- END NAV BAR -->
-     <!-- START SIDE BAR -->
-      <!-- Main Sidebar Container -->
+
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="../admindashboard/index3.html" class="brand-link">
@@ -294,11 +190,7 @@ $sqlx=mysqli_query($conn, "SELECT HospitalName FROM SetHospital")or die(mysqli_e
               </div>
             </div>
           </div>
-          <!-- Sidebar Menu -->
-          <!-- <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column"  data-widget="treeview" role="menu" align="center">
-          </nav> -->
-          <!-- /.sidebar-menu -->
+
           <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" align="left">
               <!-- <ul class="nav nav-pills nav-sidebar flex-column"  data-widget="treeview" role="menu" align="center"> -->
