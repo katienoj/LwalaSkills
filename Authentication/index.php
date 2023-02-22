@@ -135,7 +135,7 @@
           <table width="444" border="0">
             <tr>
               <td width="90" height="35">&nbsp;</td>
-              <td colspan="4" valign="top"><div align="centre" class="style2"><b>SORI LAKESIDE HOSPITAL HMIS<br></b></div></td>
+              <td colspan="4" valign="top"><div align="centre" class="style2"><b>COMMUNITY HEALTH PORTAL<br></b></div></td>
               <td width="60" rowspan="3"><div id="Layer4"><img src="../Main/Layout/images/Logo.png" width="94" height="100" /></div></td>
             </tr>
             <tr>
